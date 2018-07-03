@@ -1,11 +1,11 @@
 # Site settings
-title: Parker's Blog
+title: Anthony's Blog
 description: Learn data science with someone who's learning data science
 cover: /assets/images/newYorkSkyline.jpg
 logo:
 favicon: /assets/images/favicon.png
 baseurl: "" # the subpath of your site, e.g. /blog/ or / for root
-url: "https://parkerdixon.github.io/" # the base hostname & protocol for your site
+url: "https://ankhoudary12.github.io/" # the base hostname & protocol for your site
 paginate:	4 # The number of posts to show per page on your homepage
 # Social
 github:  parkerdixon
