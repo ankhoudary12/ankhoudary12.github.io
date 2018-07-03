@@ -1,12 +1,12 @@
 # Site settings
 title: Anthony's Blog
 description: Learn data science with someone who's learning data science
-cover: /assets/images/newYorkSkyline.jpg
+cover: /assets/images/rainforest.jpg
 logo:
-favicon: /assets/images/favicon.png
+favicon: /assets/images/apple-touch-icon_1x.png
 baseurl: "" # the subpath of your site, e.g. /blog/ or / for root
 url: "https://ankhoudary12.github.io/" # the base hostname & protocol for your site
-paginate:	4 # The number of posts to show per page on your homepage
+paginate: 5 # The number of posts to show per page on your homepage
 # Social
 github:  ankhoudary12
 linkedin:  anthony-khoudary-638913158
