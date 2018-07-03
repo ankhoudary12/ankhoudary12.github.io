@@ -8,8 +8,8 @@ baseurl: "" # the subpath of your site, e.g. /blog/ or / for root
 url: "https://ankhoudary12.github.io/" # the base hostname & protocol for your site
 paginate:	4 # The number of posts to show per page on your homepage
 # Social
-github:  parkerdixon
-linkedin:  parker-dixon
+github:  ankhoudary12
+linkedin:  anthony-khoudary-638913158
 #Additional Pages
 about: about
 resume: resume
