@@ -13,6 +13,7 @@ linkedin:  anthony-khoudary-638913158
 #Additional Pages
 about: about
 resume: resume
+apps: apps
 
 defaults:
 - scope:
