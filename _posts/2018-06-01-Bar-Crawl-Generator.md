@@ -9,9 +9,9 @@ author: Anthony
 
 ### The Problem
 
-Imagine this: It's Friday night. Your friends have tasked you with planning a night out in Alphabet City. The only problem, you don't live in Alphabet City and don't know where to go. Searching your memory banks you remember a late night conversation running on PBR at your local pool hall about an awesome bar called Doc Holliday's conveniently located on 9th and Ave A. So, you tell your friends to meet there and everything is going great. That is, until a slovenly old man wearing Jameson cologne won't stop hitting on your friend. It's uncomfortable so you and your friends leave. You walk out on the street having no idea where to go. Theres a Starbucks on the corner (obviously) which doesn't help. You want to drink cheap beer and play pool but you just have no idea where to go.
+Imagine this: It's Friday night. Your friends have tasked you with planning a night out in Alphabet City. The only problem, you don't live in Alphabet City and don't know where to go. Searching your memory banks you remember a late night conversation running on PBR at your local pool hall about an awesome bar called Doc Holliday's conveniently located on 9th and Ave A. So, you tell your friends to meet there and everything is going great. That is, until a slovenly old man wearing Jameson cologne won't stop hitting on your friend. It's uncomfortable so you and your friends leave. You walk out on the street having no idea where to go. There's a Starbucks on the corner (obviously) which doesn't help. You want to drink cheap beer and play pool but you just have no idea where to go.
 
-![Pool Hall](/assets/bar_images/pool.jpg){: width="500px" height = "400px" }
+![Pool Hall](/assets/bar_images/pool.jpg){: width="750px" height = "800px" }
 
 ### The Solution
 
@@ -21,7 +21,7 @@ You might think that a simple Google search would serve to properly solve the af
 
 I used Scrapy to collect data about every venue designated as Nightlife in Manhattan. The data included: price, neighborhood, rating, address, and the 10-20 Yelp recommended reviews. Yelp recommended reviews are designated by Yelp as the reviews which would be most useful (whatever that means) for a user to get a sense of the venue. After cleaning up the data, I used ##Google Maps Geocoding API## to get longitude and latitude coordinates for each venue based on the street address.
 
-![Doc Holliday's](/assets/bar_images/doc_hollidays.png){: width="500px" height = "400px" }
+![Doc Holliday's](/assets/bar_images/doc_hollidays.png){: width="1000px" height = "1000px" }
 
 
 
@@ -35,19 +35,19 @@ The gist of LDA is known as the "generative probabilistic model" of documents an
 
 In order to run the model I first used CountVectorizer from sklearn to get document word counts. I then fit an LDA model with 10 components in order to get a sense of my unique bar vibes. I got some interesting results.
 
-![LDA topics](/assets/bar_images/lda_topics.png){: width="500px" height = "400px" }
+![LDA topics](/assets/bar_images/lda_topics.png){: width="1000px" height = "1000px" }
 
 As one might expect, words like "food, good, bar, service" are ubiquitous among yelp reviews. Interestingly, a comedy club topic and philly cheesesteak topic were clearly transparent. I'm sure native New Yorkers would be happy to hear that they shine in Philadelphia's most well-known delicacy!
 
 In order to alleviate the issue of non-unique topics, I needed to cut off the max document frequency. By setting a threshold, the CountVectorizer will only include words or phrases that appear in less than that percentage of documents. So, words like "food, good, bar, service" should be eliminated from the LDA model. After setting the max df to be 0.3, I got the following topics.
 
-![LDA topics](/assets/bar_images/lda_topics2.png){: width="500px" height = "400px" }
+![LDA topics](/assets/bar_images/lda_topics2.png){: width="1000px" height = "1000px" }
 
 Slightly better separation but I still wasn't happy with my topics. So, I turned to NMF (non-negative matrix factorization) for another source of topic modeling. Simply put, NMF takes as an input a term-document matrix and generates a set of topics that represent weighted sets of co-occurring terms. The discovered topics form a basis that provides an efficient representation of the original documents.
 
 In order to get the document term matrix, I used TfidfVectorizer from sklearn. This differs from CountVectorizer in that instead of raw counts of terms, terms are weighted against how often they appear across the corpus. So, more frequently appearing terms are given a lower weighting as they aren't distinct among topics. I then fit an NMF model with 30 topics and got great granularity across topics. Here's a subset:
 
-![LDA topics](/assets/bar_images/nmf_topics.png){: width="500px" height = "400px" }
+![LDA topics](/assets/bar_images/nmf_topics.png){: width="1000px" height = "1000px" }
 
 Now that I have my topics, I transformed each bar's document to a series of weights representing how much they coincide with each topic. Essentially, I now have a distribution of "vibes" for each individual bar. In order to find similar bars, I used sklearn's pairwise cosine similarity function to generate a similarity matrix for every single bar. Basically, the more similar two bars are, the closer to 1 their cosine similarity would be. Now I have everything I need to make my recommendation/bar crawl generator app.
 
@@ -57,17 +57,22 @@ The basis of my app is by taking in a bar name, search radius, and amount of bar
 
 Alright, you just left Doc Holliday's, where do you drag your friends next for some cheap beer and pool?
 
-<video width="500" height="500" controls>
+<video width="1000" height="1000" controls>
   <source src="/assets/bar_images/bar_crawl_demo.mp4" type="video/mp4">
 </video>
 
 It works!!
 
 All the bars generated by the app:
+
 Cherry Tavern
+
 Sophie's
+
 Double Down Saloon
+
 The Hard Swallow
+
 Welcome to the Johnson's
 
 From personal experience, each of these bars are divey pool bars with cheap beer!
