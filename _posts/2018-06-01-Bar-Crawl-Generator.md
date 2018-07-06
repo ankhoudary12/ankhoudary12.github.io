@@ -11,7 +11,7 @@ author: Anthony
 
 Imagine this: It's Friday night. Your friends have tasked you with planning a night out in Alphabet City. The only problem, you don't live in Alphabet City and don't know where to go. Searching your memory banks you remember a late night conversation running on PBR at your local pool hall about an awesome bar called Doc Holliday's conveniently located on 9th and Ave A. So, you tell your friends to meet there and everything is going great. That is, until a slovenly old man wearing Jameson cologne won't stop hitting on your friend. It's uncomfortable so you and your friends leave. You walk out on the street having no idea where to go. Theres a Starbucks on the corner (obviously) which doesn't help. You want to drink cheap beer and play pool but you just have no idea where to go.
 
-![Pool Hall](/assets/bar_images/pool.jpg =500x500)
+![Pool Hall](/assets/bar_images/pool.jpg){: width="500px" height = "400px" }
 
 ### The Solution
 
