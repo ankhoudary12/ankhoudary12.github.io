@@ -15,4 +15,4 @@ After many hours watching cooking shows like Binging with Babish, I was finally 
 
 ### The data
 
-I used
+The primary source of recipe information for this project is [Yummly](https://yummly.com). Yummly is a recipe aggregation site: it collects thousands of recipes from around the web. Since the site loads recipes using an infinite scroll, I used Selenium to simulate this behavior and collect recipe links. Once I had the links, I used the Yummly API
