@@ -83,7 +83,7 @@ From personal experience, each of these venues are divey pool bars with cheap be
 
 If anyone would like to use this app to plan a night out, please use the following link:
 
-[Manhattan Bar Crawl Generator](manhattan-bar-crawler.us-east-1.elasticbeanstalk.com )
+[Manhattan Bar Crawl Generator](https://manhattan-bar-crawler.us-east-1.elasticbeanstalk.com )
 
 
 And remember, **DRINK AND PARTY RESPONSIBLY!!!**
