@@ -79,7 +79,10 @@ The basis of my app, Recipe2Style, is that by taking in a recipe as input, it wi
 Check it out below!
 
 
-![demo](/assets/recipe_images/cheeseburger_demo.mov){: width="750px" height = "800px" }
+<video width="1000" height="1000" controls>
+  <source src="/assets/recipe_images/cheeseburger_demo.mp4" type="video/mp4">
+</video>
+
 
 
 
