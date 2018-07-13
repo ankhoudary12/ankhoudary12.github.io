@@ -89,3 +89,7 @@ Check it out below!
 In the above example, the American recipe of "Cheeseburgers" was transformed into the Moroccan Style. Harissa is a common ingredient in Moroccan cooking and so I believe my app accomplished what I set out to do.
 
 Well, I don't know about anyone else, but I'm getting hungry! Time to hit the farmer's market and get to cooking!!
+
+If anyone would like to try this app for themselves, please use the following link:
+
+[Recipe 2 Style](http://recipe-2-style.us-east-1.elasticbeanstalk.com/)
