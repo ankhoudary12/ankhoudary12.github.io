@@ -55,7 +55,7 @@ Before starting my modeling, I needed to decide on which classification algorith
 
 After performing a test/train split, I trained each of the above models with my data. I then get testing accuracy using a stratified (class balance is maintained) k-fold split (10 fold). The following graph shows my results:
 
-![Model Results](/assets/diabetes_images/model_selection.pdf){: width="750px" height = "800px" }
+![Model Results](/assets/diabetes_images/model_selection.png){: width="750px" height = "800px" }
 
 As you can see, Logistic Regression performed the best with an accuracy of about 78%. Yet, all the other algorithms performed similarly well. I chose to go with Logistic Regression as my classification algorithm for its clear interpretability and its superior performance.
 
@@ -77,7 +77,7 @@ With a recall of only **54%** for the positive diabetic class, I needed to do be
 
 As I mentioned before, the Logistic Regression essentially outputs probabilities that a data point is either a 0 (negative) or 1 (positive). Based on a threshold, it will assign class labels. The default parameter in the sklearn logistic regression is a threshold of 0.5 (higher probability for 1 than 0.5 leads it to be classified as a 1). How will, I decide what the optimal threshold for my model is? I will use a precision recall curve.
 
-![precision recall]('/assets/diabetes_images/precision_recall_curve.pdf'){: width="750px" height = "800px" }
+![precision recall]('/assets/diabetes_images/precision_recall_curve.png'){: width="750px" height = "800px" }
 
 Based on looking at the curve, I will set my optimal threshold as 0.35. With this new threshold, I achieved the following metrics:
 
@@ -139,7 +139,7 @@ After fitting the Logistic Regression model, I achieved the following metrics:
 
 The coefficients for the model:
 
-![coefficients bare]('/assets/diabetes_images/coefficients_bare.pdf'){: width="750px" height = "800px" }
+![coefficients bare]('/assets/diabetes_images/coefficients_bare.png'){: width="750px" height = "800px" }
 
 As expected, bmi and age play a significant role in determining if a person would be classified as diabetic in absence of all the other features. In fact, the Mayo Clnic lists these three factors as key indicators of Type II diabetes risk.  
 
