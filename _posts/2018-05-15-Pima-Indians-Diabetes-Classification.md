@@ -149,3 +149,7 @@ As expected, bmi and age play a significant role in determining if a person woul
 ![diabetes risk](/assets/diabetes_images/diabetes_risk.png){: width="750px" height = "800px" }
 
 Although this model didn't perform as well as one would hope, it highlights one of the key deficiencies of a diabetes diagnosis. Even if you are aware of the risk factors actual medical doctors recommend being wary of (age, bmi, blood pressure), the model was only **63%** accurate. This is only **13%** better than random guessing (assume everyone is diabetic). So, I beleive the key takeaway from this project is that if you even slightly suspect you may be at risk for diabetes, you should see a doctor immediately! Even knowing the risk factors seems to be a flip of the coin!
+
+In order to try out the Flask App I made, please use the following link:
+
+**[Diabetes Predictor App](http://pima-indians-diabetes-predictor.us-east-1.elasticbeanstalk.com/)**
