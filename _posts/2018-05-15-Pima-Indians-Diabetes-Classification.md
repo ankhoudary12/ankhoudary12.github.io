@@ -36,8 +36,9 @@ The features of the dataset:
 
 **Pregnancies:** number of times pregnant
 
-**Glucose** concentration of glucose in blood 2 hrs after ingestion of sugary drink (mmol/L)
- of sugary drink (μU/mL)
+**Glucose:** concentration of glucose in blood 2 hrs after ingestion of sugary drink (mmol/L)
+
+**Insulin:** concentration of insulin in blood 2 hrs after ingestion of sugary drink (μU/mL)
 
 # Modeling
 
@@ -88,11 +89,12 @@ Based on looking at the curve, I will set my optimal threshold as 0.35. With thi
 | Healthy     |90% | 82%|
 | Diabates     | 67%     |   80% |
 
+
 Although I had to sacrifice some precision, I was able to achieve a much higher recall of **80%**. I was willing to sacrifice some precision because those improperly classified as diabetic might be hovering on the cusp of pre-diabetes and should probably seek medical attention.
 
 With my improved model, I got the following key features for predicting a diabetes diagnosis:
 
-![coefficients_full]('/assets/diabetes_images/coefficients_full.png'){: width="750px" height = "800px" }
+![coeffcients_full]('/assets/diabetes_images/coefficients_full.png'){: width="750px" height = "800px" }
 
 Glucose concentration, bmi, and number of pregnancies were the strongest features for classifying a positive diabetes diagnosis. But what do these coefficients really mean?
 
@@ -136,6 +138,7 @@ After fitting the Logistic Regression model, I achieved the following metrics:
 | -------------|:-------------:| :-----:|
 | Healthy     |77% | 61%|
 | Diabates     | 48%     |   66% |
+
 
 The coefficients for the model:
 
