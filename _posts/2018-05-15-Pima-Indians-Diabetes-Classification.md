@@ -46,7 +46,7 @@ The features of the dataset:
 
 Before starting my modeling, I needed to decide on which classification algorithm to use. Because my problem involves the diagnosis of a potentially lethal medical condition, I chose algorithms with the utmost interpretability.
 
-**KNN (k-nearest neighbors):** Class is chosen based on class of k nearest data points based on euclidean distance
+**KNN [k-nearest neighbors](https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm):** Class is chosen based on class of k nearest data points based on euclidean distance
 
 **[Logistic Regression:](https://en.wikipedia.org/wiki/Logistic_regression)** Class is chosen based on highest probability of being either a 0 or 1 (more on this later).
 
@@ -78,7 +78,7 @@ With a recall of only **54%** for the positive diabetic class, I needed to do be
 
 As I mentioned before, the Logistic Regression essentially outputs probabilities that a data point is either a 0 (negative) or 1 (positive). Based on a threshold, it will assign class labels. The default parameter in the sklearn logistic regression is a threshold of 0.5 (higher probability for 1 than 0.5 leads it to be classified as a 1). How will, I decide what the optimal threshold for my model is? I will use a precision recall curve.
 
-![precision recall]('/assets/diabetes_images/precision_recall_curve.png'){: width="750px" height = "800px" }
+![precision recall](/assets/diabetes_images/precision_recall_curve.png){: width="750px" height = "800px" }
 
 Based on looking at the curve, I will set my optimal threshold as 0.35. With this new threshold, I achieved the following metrics:
 
@@ -94,7 +94,7 @@ Although I had to sacrifice some precision, I was able to achieve a much higher 
 
 With my improved model, I got the following key features for predicting a diabetes diagnosis:
 
-![coeffcients_full]('/assets/diabetes_images/coefficients_full.png'){: width="750px" height = "800px" }
+![coeffcients_full](/assets/diabetes_images/coefficients_full.png){: width="750px" height = "800px" }
 
 Glucose concentration, bmi, and number of pregnancies were the strongest features for classifying a positive diabetes diagnosis. But what do these coefficients really mean?
 
@@ -102,19 +102,19 @@ Glucose concentration, bmi, and number of pregnancies were the strongest feature
 
 The following figure explains the concept of the logistic function. Essentially, the linear model which can range from -∞ to ∞ is squished to output only from 0 to 1 (this value represents the probability of being a positive, 1 class).
 
-![logistic function]('/assets/diabetes_images/logistic.png'){: width="750px" height = "800px" }
+![logistic function](/assets/diabetes_images/logistic.png){: width="750px" height = "800px" }
 
 [Resource for Interpreting Machine Learning Models](https://christophm.github.io/interpretable-ml-book)
 
 Since the linear function is wrapped in the logistic function (output from 0 to 1), we can't interpret the results of the regression linearly. So, we need to transform the linear function into something more interpretable. To do this, we will use the log odds:
 
-![log odds]('/assets/diabetes_images/log_odds.png'){: width="750px" height = "800px" }
+![log odds](/assets/diabetes_images/log_odds.png){: width="750px" height = "800px" }
 
 The inner term represents the odds ratio of classifying as a 1 or 0. Odds are essentially the probability of a 1 divided by the probability of a 0.
 
 Taking the log and rearranging allows us to interpret the coefficients of the logistic regression.
 
-![log exp]('/assets/diabetes_images/log_exp.png'){: width="750px" height = "800px" }
+![log exp](/assets/diabetes_images/log_exp.png){: width="750px" height = "800px" }
 
 Basically, what this means is that a unit increase in a feature x, can be interpreted as an increase in the odds ratio of classifying as a 1 by a factor of e^(coefficient weight).
 
@@ -142,10 +142,10 @@ After fitting the Logistic Regression model, I achieved the following metrics:
 
 The coefficients for the model:
 
-![coefficients bare]('/assets/diabetes_images/coefficients_bare.png'){: width="750px" height = "800px" }
+![coefficients bare](/assets/diabetes_images/coefficients_bare.png){: width="750px" height = "800px" }
 
 As expected, bmi and age play a significant role in determining if a person would be classified as diabetic in absence of all the other features. In fact, the Mayo Clnic lists these three factors as key indicators of Type II diabetes risk.  
 
-![diabetes risk]('/assets/diabetes_images/diabetes_risk.png'){: width="750px" height = "800px" }
+![diabetes risk](/assets/diabetes_images/diabetes_risk.png){: width="750px" height = "800px" }
 
 Although this model didn't perform as well as one would hope, it highlights one of the key deficiencies of a diabetes diagnosis. Even if you are aware of the risk factors actual medical doctors recommend being wary of (age, bmi, blood pressure), the model was only **63%** accurate. This is only **13%** better than random guessing (assume everyone is diabetic). So, I beleive the key takeaway from this project is that if you even slightly suspect you may be at risk for diabetes, you should see a doctor immediately! Even knowing the risk factors seems to be a flip of the coin!
