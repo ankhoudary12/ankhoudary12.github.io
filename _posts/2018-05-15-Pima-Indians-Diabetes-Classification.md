@@ -92,7 +92,7 @@ Although I had to sacrifice some precision, I was able to achieve a much higher 
 
 With my improved model, I got the following key features for predicting a diabetes diagnosis:
 
-![precision recall]('/assets/diabetes_images/coefficients_full.png'){: width="750px" height = "800px" }
+![coefficients_full]('/assets/diabetes_images/coefficients_full.png'){: width="750px" height = "800px" }
 
 Glucose concentration, bmi, and number of pregnancies were the strongest features for classifying a positive diabetes diagnosis. But what do these coefficients really mean?
 
